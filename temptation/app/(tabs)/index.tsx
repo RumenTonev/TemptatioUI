@@ -7,7 +7,8 @@ import { ThemedView } from '@/components/ThemedView';
 import { Text, Card, Button, Icon } from '@rneui/themed';
 
 const imageGrass = require('../../assets/images/Grass.png');
-const imageBallGrass = require('./BallGrass.png');
+//const imageBallGrass = require('./BallGrass.png');
+const imageBallGrass = require('../../assets/images/Ball.png');
 
 export default function HomeScreen() {
   function realTimePressed() {
