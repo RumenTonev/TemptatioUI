@@ -6,7 +6,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Text, Card, Button, Icon } from '@rneui/themed';
 
-const imageGrass = require('./Grass.png');
+const imageGrass = require('../../assets/images/Grass.png');
 const imageBallGrass = require('./BallGrass.png');
 
 export default function HomeScreen() {
