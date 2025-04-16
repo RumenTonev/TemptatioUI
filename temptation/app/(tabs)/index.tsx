@@ -1,22 +1,22 @@
-import { Image, StyleSheet, Platform, Pressable, ImageBackground, View } from 'react-native';
+import { StyleSheet, Platform, Pressable, ImageBackground, View } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Text, Card, Button, Icon } from '@rneui/themed';
+import { Text } from '@rneui/themed';
+import { useRouter } from 'expo-router';
 
 const imageGrass = require('../../assets/images/Grass.png');
-//const imageBallGrass = require('./BallGrass.png');
 const imageBallGrass = require('../../assets/images/Ball.png');
+const archivedImg = require('../../assets/images/react-logo.png');
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   function realTimePressed() {
-    alert("real time pressed!");
+    router.navigate("/realTime");
   }
 
   function archivedPressed() {
-    alert('Archived pressed!');
+    router.navigate("/archived");
   }
 
   return (
@@ -24,25 +24,18 @@ export default function HomeScreen() {
       <ImageBackground source={imageGrass} resizeMode="cover" style={styles.image}>
         <View style={styles.view}>
           <Pressable onPress={realTimePressed}>
-            <Card containerStyle={styles.card}>
             <ImageBackground
-              style={{minHeight: 200, borderWidth: 0}}
+              style={{minHeight: 200, borderWidth: 0, paddingTop: 100}}
               source={imageBallGrass}>
-                <Text style={styles.cardText}>RealTime</Text>
-              </ImageBackground>
-            </Card>
+              <Text style={styles.cardText}>RealTime</Text>
+            </ImageBackground>
           </Pressable>
           <Pressable onPress={archivedPressed}>
-            <Card containerStyle={styles.card}>
-              <Card.Title style={styles.cardTitle}>Archived</Card.Title>
-                <Card.Image
-                  style={{ padding: 0 }}
-                  source={{
-                    uri:
-                      'https://awildgeographer.files.wordpress.com/2015/02/john_muir_glacier.jpg',
-                  }}
-                />
-            </Card>
+            <ImageBackground
+                style={{minHeight: 200, borderWidth: 0, paddingTop: 100}}
+                source={archivedImg}>
+                <Text style={styles.cardText}>Archived</Text>
+            </ImageBackground>
           </Pressable>
         </View>
       </ImageBackground>
@@ -79,23 +72,3 @@ const styles = StyleSheet.create({
     color: 'yellow'
   },
 });
-
-{/* const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
-*/}
