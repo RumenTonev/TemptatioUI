@@ -1,7 +1,7 @@
 import { StyleSheet, Platform, Pressable, ImageBackground, View } from 'react-native';
 
 import { ThemedView } from '@/components/ThemedView';
-import { Text } from '@rneui/themed';
+import { Text } from 'react-native';
 import { useRouter } from 'expo-router';
 
 const imageGrass = require('../../assets/images/Grass.png');
