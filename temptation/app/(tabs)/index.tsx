@@ -3,6 +3,8 @@ import { StyleSheet, Platform, Pressable, ImageBackground, View } from 'react-na
 import { ThemedView } from '@/components/ThemedView';
 import { Text } from 'react-native';
 import { useRouter } from 'expo-router';
+import 'react-native-get-random-values';
+
 
 const imageGrass = require('../../assets/images/Grass.png');
 const imageBallGrass = require('../../assets/images/Ball.png');
